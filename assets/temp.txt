@@ -1,0 +1,28 @@
+<div class="item">
+    <img src="./assets/tabcontent/tyfy.png" alt="For You">
+    <div class="text">
+        <h2 class="raleway-bold"><a href="https://dai.ly/x8mmgeh" target="_blank">Tatsuro Yamashita - FOR YOU</a></h2><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, placeat illo harum id inventore necessitatibus.</p>
+    </div>
+</div>
+<div class="item">
+    <img src="./assets/tabcontent/atmly.jpg" alt="Timely">
+    <div class="text">
+        <h2 class="raleway-bold"><a href="https://open.spotify.com/album/3OvZYx7AAGplmJjwD29JiV" target="_blank">Anri - TIMELY!!</a></h2><br>
+        <p>One of the timeless Anri discography that I personally like and recommend to others.</p>
+    </div>
+</div>
+<div class="item">
+    <img src="./assets/tabcontent/tka5c.jpg" alt="After 5 Clash">
+    <div class="text">
+        <h2 class="raleway-bold"><a href="https://youtu.be/4feHTSWd6jU?si=87N4rvco2nm21FN5" target="_blank">Toshiki Kadomatsu - AFTER 5 CLASH</a></h2><br>
+        <p>One of the best gateways to citypop if you'd ask me. [make short descriptions for these albums]</p>
+    </div>
+</div>
+<div class="item">
+    <img src="./assets/tabcontent/ksri.jpg" alt="River's Island">
+    <div class="text">
+        <h2 class="raleway-bold"><a href="https://youtu.be/7MDtyTShrVw?si=WQ5Oq23pVm0Ray5s" target="_blank">Kiyotaka Sugiyama & Omega Tribe - RIVER'S ISLAND</a></h2><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui velit laborum in illo! Quod, voluptatem?</p>
+    </div>
+</div>

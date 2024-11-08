@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="chakraui" clip-path="url(#clip0_790_7669)">
+<g id="Group">
+<g id="Clip path group">
+<mask id="mask0_790_7669" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+<g id="SVGID_00000057147897966305859040000014749650097660406428_">
+<path id="Vector" d="M100 0H0V100H100V0Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask0_790_7669)">
+<g id="Group_2">
+<path id="Vector_2" d="M100 50C100 22.4 77.6 0 50 0C22.4 0 0 22.4 0 50C0 77.6 22.4 100 50 100C77.6 100 100 77.6 100 50Z" fill="url(#paint0_linear_790_7669)"/>
+<path id="Vector_3" d="M27.1 52.1002L61.2 18.3002C61.8 17.7002 62.9 18.4002 62.4 19.2002L49.7 42.5002C49.4 43.0002 49.8 43.7002 50.4 43.7002H72.3C73 43.7002 73.3 44.6002 72.8 45.0002L34.4 80.8002C33.7 81.4002 32.7 80.5002 33.2 79.8002L51.4 54.7002C51.8 54.2002 51.4 53.5002 50.8 53.5002H27.6C26.9 53.5002 26.6 52.6002 27.1 52.1002Z" fill="white"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_790_7669" x1="50" y1="0.0005" x2="50" y2="100" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B4B4B4"/>
+<stop offset="1" stop-color="#959595"/>
+</linearGradient>
+<clipPath id="clip0_790_7669">
+<rect width="100" height="100" fill="white"/>
+</clipPath>
+</defs>
+</svg>

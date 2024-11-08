@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Error</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <!-- remove test css if finished testing -->
+    <link rel="stylesheet" href="test.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Klee+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Zen+Antique&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="poppins-regular">
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar-brand poppins-bold" id="navbar-brand">JS Error</div>
+            <div class="navbar-actions">
+                <ul class="navbar-links-lg lg-scr-show">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+                <button class="drawer-btn-sm lg-scr-hide" id="drawer-btn-sm">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="navbar-drawer-sm" id="navbar-drawer-sm">
+            <ul class="navbar-links-sm">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="hero fadein-content" id="hero">
+            <div class="hero-container">
+                <div class="hero-leftside">
+                    <h1 class="raleway-bold big-hero">Hi there!<br>I'm Fernando Villanueva, Jr.</h1>
+                    <p>An aspiring software developer with a passion in mobile and web app development,<br>and coding in
+                        Java,
+                        Rust, and C.</p>
+                    <br>
+                    <div class="hero-div-leftside-actions">
+                        <a href="./assets/fvj_cv.pdf" target="_blank" class="raleway-bold cv-download-button">Download
+                            my
+                            CV</a>
+                    </div>
+                </div>
+                <div class="hero-rightside">
+                    <img src="./assets/avatar.jpg" alt="avatar" class="hero-avatar">
+                </div>
+            </div>
+        </div>
+        <div class="about section-container" id="about">
+            <h1 class="raleway-bold section-container-headingtext">About Me</h1>
+            <div class="basicmsgbox poppins-regular  fadein-content">
+                <div class="personal-info-box">
+                    <div>
+                        <p><b>Full Name:</b> Fernando T. Villanueva, Jr.</p>
+                        <p><b>Email:</b> juniorvillanueva156@outlook.com</p>
+                    </div>
+                    <div>
+                        <p><b>Phone Number:</b> 0992 542 5467</p>
+                        <p><b>Location:</b> San Mateo, Rizal, Philippines.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="personal-info-box basicmsgbox poppins-regular  fadein-content">
+                <ul>
+                    <b>Background:</b>
+                    <li>I'm 18 years old.</li>
+                    <li>My languages are Filipino (Tagalog) and English. <p class="jphighlight">I'm currently
+                            self-learning Japanese</p>
+                        <p class="jphighlighta">オレは現在独学で日本語を勉強しています。</p>
+                    </li>
+                    <li>I code with Visual Studio Code and Neovim, on Windows 11 and Kali Linux.</li>
+                    <li>I currently study Computer Science in <a
+                            href="https://www.sti.edu/campuses-details.asp?campus_id=TUFS" target="_blank">STI
+                            College Marikina</a>.</li>
+                    <li>I'm currently working on <a href="https://github.com/fvjr156/feedback-system"
+                            target="_blank">remaking ArciFS - Feedback System</a> and <a
+                            href="https://github.com/fvjr156/vremia" target="_blank">Vremia - Digital Time Management
+                            App</a>.</li>
+                </ul>
+            </div>
+            <div class="personal-info-box basicmsgbox poppins-regular fadein-content">
+                <ul>
+                    <b>Education:</b>
+                    <li>
+                        <b>STI College Marikina</b> - Concepcion Uno, Marikina City
+                        <ul style="margin-left: 3em;">
+                            <li>2024-present - Bachelor of Science in Computer Science (BSCS)</li>
+                            <li>2022-2024 - Information and Communication Technology in Mobile App and Web Development
+                                strand</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Silangan National High School</b> - San Mateo, Rizal
+                        <ul style="margin-left: 3em;">
+                            <li>2018-2022 - Secondary Education: Junior High School</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="skills section-container" id="skills">
+            <h1 class="raleway-bold section-container-headingtext">Skills</h1>
+            <div class="basicmsgbox poppins-regular fadein-content">
+                Tech Stack / Programming Languages and Frameworks:<br><br>
+                <div class="techstack">
+                    <div>
+                        <img src="./assets/techstack/android-icon.svg" alt="android">
+                        <img src="./assets/techstack/c-plusplus.svg" alt="cpp">
+                        <img src="./assets/techstack/c-sharp.svg" alt="cs">
+                        <img src="./assets/techstack/c.svg" alt="c">
+                        <img src="./assets/techstack/chakraui.svg" alt="chakraui">
+                        <img src="./assets/techstack/css-3.svg" alt="css">
+                        <img src="./assets/techstack/git.svg" alt="git">
+                    </div>
+                    <div>
+                        <img src="./assets/techstack/html-5.svg" alt="html">
+                        <img src="./assets/techstack/insomnia.svg" alt="insomnia">
+                        <img src="./assets/techstack/java.svg" alt="java">
+                        <img src="./assets/techstack/javascript.svg" alt="javascript">
+                        <img src="./assets/techstack/linux.svg" alt="linux">
+                        <img src="./assets/techstack/material-ui.svg" alt="materialui">
+                        <img src="./assets/techstack/mongodb-icon.svg" alt="mongodb">
+                    </div>
+                    <div>
+                        <img src="./assets/techstack/mysql.svg" alt="mysql">
+                        <img src="./assets/techstack/nodejs-icon.svg" alt="nodejs">
+                        <img src="./assets/techstack/php.svg" alt="php">
+                        <img src="./assets/techstack/python.svg" alt="python">
+                        <img src="./assets/techstack/react.svg" alt="react">
+                        <img src="./assets/techstack/rust.svg" alt="rust">
+                        <img src="./assets/techstack/tailwindcss-icon.svg" alt="tailwind">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="projects" id="projects"></div>
+        <div class="contact" id="contact"></div>
+    </main>
+    <footer class="footerbar">
+        <p class="poppins-regular">
+            &copy;2024 FVJ - All rights reserved. [v. 7.0]
+        </p>
+    </footer>
+    <script src="./js/script.js"></script>
+    <script src="./js/navbarbtn.js"></script>
+    <div class="noise"></div>
+</body>
+
+</html>

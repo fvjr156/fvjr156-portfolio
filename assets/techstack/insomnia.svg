@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="insomnia" clip-path="url(#clip0_790_8236)">
+<path id="Vector" d="M50 97.5C76.2 97.5 97.5 76.3 97.5 50C97.5 23.8 76.2 2.5 50 2.5C23.8 2.5 2.5 23.8 2.5 50C2.5 76.2 23.8 97.5 50 97.5Z" fill="white"/>
+<path id="Vector_2" d="M50 0C22.4 0 0 22.4 0 50C0 77.6 22.4 100 50 100C77.6 100 100 77.6 100 50C100 22.4 77.6 0 50 0ZM50 5.1C74.8 5.1 94.9 25.2 94.9 50C94.9 74.8 74.8 94.9 50 94.9C25.2 94.9 5.1 74.8 5.1 50C5.1 25.2 25.2 5.1 50 5.1Z" fill="#282828"/>
+<path id="Vector_3" fill-rule="evenodd" clip-rule="evenodd" d="M50.6 14.3999C70.3 14.3999 86.2 30.2999 86.2 49.9999C86.2 69.6999 70.3 85.5999 50.6 85.5999C30.9 85.5999 15 69.6999 15 49.9999C15 45.1999 16 40.5999 17.7 36.3999C20.2 39.7999 24.3 42.0999 28.9 42.0999C36.5 42.0999 42.7 35.8999 42.7 28.2999C42.7 23.6999 40.5 19.6999 37 17.0999C41.2 15.3999 45.8 14.3999 50.6 14.3999Z" fill="url(#paint0_linear_790_8236)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_790_8236" x1="50.5654" y1="85.5938" x2="50.5654" y2="14.4074" gradientUnits="userSpaceOnUse">
+<stop stop-color="#3C3C3C"/>
+<stop offset="1" stop-color="#282828"/>
+</linearGradient>
+<clipPath id="clip0_790_8236">
+<rect width="100" height="100" fill="white"/>
+</clipPath>
+</defs>
+</svg>
