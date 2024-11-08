@@ -141,7 +141,7 @@ button {
   justify-content: center;
 }
 
-.hero-leftside > *{
+.hero-leftside>* {
   padding-top: 10px;
 }
 
@@ -168,6 +168,60 @@ button {
   border-color: white;
 }
 
+/* about styles */
+.personal-info-box>ul>li>a:hover {
+  color: var(--accent-color);
+}
+
+.section-container {
+  margin: 0em 1em;
+}
+
+.section-container-headingtext {
+  margin: 2em 1em 0em 0.7em;
+  font-size: 2.3em;
+}
+
+.personal-info-box>ul {
+  list-style-type: none;
+  margin: 0.5em;
+}
+
+.personal-info-box>ul>b, .basicmsgbox>b {
+  font-size: 1.2em;
+}
+
+.jphighlight {
+  visibility: visible;
+  display: inline;
+}
+
+.jphighlighta {
+  display: none;
+}
+
+.jphighlight:hover {
+  display: none;
+}
+
+.jphighlight:hover+.jphighlighta {
+  display: inline;
+}
+
+/* skills styles*/
+.techstack>div>img {
+  width: 80px;
+  padding: 10px;
+  filter: grayscale(100%);
+  border: 1px solid transparent;
+  transition: width 0.2s ease, border-color 0.5s ease;
+}
+
+.techstack>div>img:hover {
+  width: 85px;
+  border-color: var(--accent-color);
+}
+
 /* footer styles */
 .footerbar {
   background-color: var(--secondary-color);
@@ -191,6 +245,17 @@ button {
 
   .lg-scr-hide {
     display: none;
+  }
+}
+
+
+@media only screen and (min-width: 769px) {
+  .personal-info-box {
+    display: flex;
+  }
+
+  .personal-info-box div:first-of-type {
+    margin: 0em 3em 0em 1em;
   }
 }
 
@@ -224,9 +289,11 @@ button {
     display: flex;
     flex-direction: column;
   }
-}
 
-@media only screen and (max-width: 600px) {
+  .heading-text {
+    text-align: center;
+  }
+
   .footerbar {
     font-size: 0.7em;
   }
