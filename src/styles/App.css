@@ -1,0 +1,65 @@
+.default-transition {
+    transition-property: all;
+    transition-delay: 0.1s;
+    transition-duration: var(--duration-default);
+    transition-timing-function: var(--ease-in-out-sine);
+}
+
+.footer-transition {
+    transition-property: all;
+    transition-duration: var(--duration-default);
+    transition-timing-function: var(--ease-in-out-sine);
+}
+
+.bgcol-transition {
+    transition-property: background-color;
+    transition-delay: 0.1s;
+    transition-duration: var(--duration-default);
+    transition-timing-function: var(--ease-in-out-sine);
+}
+
+.accordion-transition {
+    transition: height var(--duration-default) var(--ease-in-out-sine);
+}
+
+.no-theme-transition * {
+  transition: none !important;
+}
+
+:root {
+  --glint-width: 35%;
+  --glint-speed: 2.8s;
+  --glint-color: rgba(255, 255, 255, 0.85);
+}
+
+@layer utilities {
+  .text-glisten {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .text-glisten::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 45%,
+      rgba(255,255,255,0.8) 50%,
+      transparent 55%,
+      transparent 100%
+    );
+
+    transform: translateX(-120%);
+    animation: glisten var(--glint-speed, 2.8s) linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes glisten {
+    to {
+      transform: translateX(120%);
+    }
+  }
+}

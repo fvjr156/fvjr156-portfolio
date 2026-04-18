@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('../assets/Graphik.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/Inter-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+    --font-card: 'Graphik', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --color-background: #f7f7f1;
+    --color-gradient1: #d1d1d1;
+    --color-gradient2: #b3b3b3;
+    --color-text: #111111;
+    --color-accent: #b90000;
+    --color-card: #f6f6f6;
+    --color-contactem: #b90000;
+    --spacing-footer: 2.5rem;
+    --color-footertxt: #e6e6e6;
+    --background-image-hero: url("../assets/noisea.svg");
+    --background-image-footer: url("../assets/footerdes1.svg");
+
+    --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-in-circ: cubic-bezier(0.55, 0, 1, 0.45);
+    --ease-in-out-sine: cubic-bezier(0.37, 0, 0.63, 1);
+    --duration-default: 400ms;
+
+    --footerdesign: none, #b90000;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+    .dark {
+        --color-background: #090000;
+        --color-gradient1: #555555;
+        --color-gradient2: #b6b6b6;
+        --color-text: #e6e6e6;
+        --color-accent: #c20000;
+        --color-card: #111111;
+        --color-contactem: #ffffff;
+        --spacing-footer: 2.5rem;
+        --color-footertxt: #e6e6e6;
+        --background-image-hero: url("../assets/noise.svg");
+        --background-image-footer: url("../assets/footerdes1.svg");
+
+        --footerdesign: var(--background-image-footer), var(--color-background);
+    }
+    /* for footer: display svg on desktop, color only on mobile; both cases have different values per theme mode */
+    @media (max-width: 768px) {
+        :root {
+            --footerdesign: none, #b90000;
+            --background-image-hero: none;
+        }
+        .dark {
+            --footerdesign: none, #111111;
+            --background-image-hero: none;
+        }
+    }
+}

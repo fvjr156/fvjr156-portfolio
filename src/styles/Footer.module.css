@@ -1,0 +1,13 @@
+.footer {
+    background: var(--footerdesign);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position-y: -40px;
+    background-position-x: -10px;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 1rem;
+    }
+}

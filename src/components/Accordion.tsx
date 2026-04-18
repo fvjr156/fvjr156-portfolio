@@ -1,0 +1,97 @@
+import { createContext, useContext } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "react-feather";
+
+const AccordionContext = createContext({
+  open: false,
+});
+
+type AosData = {
+  animType: string;
+  animdelay: number;
+  animDuration: number;
+  once: boolean
+}
+
+export const Accordion = ({
+  open,
+  children,
+  styles,
+  aosData = { animType: "", animdelay: 0, animDuration: 0, once: true }
+}: { open: boolean, children: React.ReactNode, styles: React.CSSProperties, aosData: AosData }) => {
+  return (
+    <AccordionContext.Provider value={{ open }}>
+      <div
+        data-aos={aosData.animType}
+        data-aos-delay={aosData.animdelay}
+        data-aos-duration={aosData.animDuration}
+        data-aos-once={aosData.once}
+        style={styles}
+        className="
+        hover:-translate-y-2 transition-transform duration-300 ease-in
+        relative pb-15 rounded-t-2xl
+        w-full border border-border/50 backdrop-blur-md overflow-hidden
+        ">
+        {children}
+      </div>
+    </AccordionContext.Provider>
+  );
+};
+
+export const AccordionHeader = ({
+  children,
+  onClick,
+  styles
+}) => {
+  const { open } = useContext(AccordionContext);
+
+  return (
+    <button
+      onClick={onClick}
+      style={styles}
+      className="flex w-full items-center justify-between
+                 px-5 h-14
+                 text-left font-medium
+"
+    >
+      <span className="text-sm md:text-base">
+        {children}
+      </span>
+
+      <motion.span
+        animate={{ rotate: open ? 180 : 0 }}
+        transition={{ duration: 0.25 }}
+        className="flex items-center justify-center"
+      >
+        <ChevronDown size={18} />
+      </motion.span>
+    </button>
+  );
+};
+
+export const AccordionBody = ({
+  children,
+}) => {
+  const { open } = useContext(AccordionContext);
+
+  return (
+    <AnimatePresence initial={false}>
+      {open && (
+        <motion.div
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "auto", opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          transition={{
+            height: { duration: 0.35 },
+            opacity: { duration: 0.2 },
+          }}
+          className="overflow-hidden"
+        >
+          <div className="px-5 pb-5 text-sm">
+            {children}
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};

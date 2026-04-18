@@ -1,0 +1,22 @@
+[
+    {
+        "label": "Home",
+        "pointTo": "home"
+    },
+    {
+        "label": "Projects",
+        "pointTo": "projects"
+    },
+    {
+        "label": "Education",
+        "pointTo": "education"
+    },
+    {
+        "label": "Achievements",
+        "pointTo": "certificates"
+    },
+    {
+        "label": "Contact",
+        "pointTo": "contact"
+    }
+]
