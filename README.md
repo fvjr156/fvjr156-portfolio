@@ -1,13 +1,11 @@
 # my-portfolio
 
----
-
 Technologies Used:
-React
-Motion (formerly Framer Motion)
-AOS (animate-on-Scroll)
-TypeScript & TSX
-Tailwind CSS V4
+- React
+- Motion (formerly Framer Motion)
+- AOS (animate-on-Scroll)
+- TypeScript & TSX
+- Tailwind CSS V4
 
 ---
 
