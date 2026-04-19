@@ -1,84 +1,146 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
+import { useState } from "react";
 import ImageLoading from "./ImageLoading";
 import { ArrowDown } from "react-feather";
 import ShinyText from "./ShinyText";
-import { useState } from "react";
 import type { HeroProps } from "../types/Types";
 
 export default function Hero({ data, isScrolled, theme, id }: HeroProps) {
   const [imgLoaded, setImgLoaded] = useState(false);
-  const [entranceOk, setEntranceOk] = useState(false);
+
+  const container: Variants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.12,
+      },
+    },
+  };
+
+  const easeOut = [0.16, 1, 0.3, 1] as const;
+
+  const avatar: Variants = {
+    hidden: { opacity: 0, y: 20, scale: 0.96 },
+    show: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: easeOut,
+      },
+    },
+  };
+
+  const nameContainer = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.045,
+        delayChildren: 0.08,
+      },
+    },
+  };
+
+  const letter: Variants = {
+    hidden: { opacity: 0, y: 12 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.28,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+  };
+
+  const description: Variants = {
+    hidden: { opacity: 0, y: 14 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.45,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+  };
+
+  const scrollHint: Variants = {
+    hidden: { opacity: 0, y: -10 },
+    show: {
+      opacity: 0.8,
+      y: 0,
+      transition: { duration: 0.35, ease: "easeOut" },
+    },
+  };
 
   return (
-    <div
+    <motion.div
       id={id}
+      variants={container}
+      initial="hidden"
+      animate="show"
       className="min-h-screen p-10 flex flex-col justify-center items-center text-center"
     >
-      <motion.div
-        whileHover={{
-          x: [-1, 1, -1, 1, 0],
-          transition: {
-            duration: 0.3,
-            repeat: Infinity,
-            ease: "easeInOut",
-          },
-        }}
-      >
-        <div
-          className="w-43 h-43 border-2 border-accent rounded-xl"
-          data-aos="fade-up"
-          data-aos-duration="900"
-          data-aos-once="true"
+      <motion.div variants={avatar}>
+        <motion.div
+          whileHover={{
+            x: [-1, 1, -1, 1, 0],
+            transition: {
+              duration: 0.3,
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
+          }}
         >
-          {!imgLoaded && <ImageLoading />}
-          <img
-            src={data.heroavatar}
-            alt="avatar"
-            draggable={false}
-            onLoad={() => setImgLoaded(true)}
-            onError={() => setImgLoaded(false)}
-            onMouseDown={(e) => e.preventDefault()}
-            onContextMenu={(e) => e.preventDefault()}
-            className={`${imgLoaded ? "opacity-100" : "opacity-0"} rounded-lg w-full h-full object-cover transition-opacity duration-300`}
-          />
-        </div>
+          <div className="w-43 h-43 border-2 border-accent rounded-xl">
+            {!imgLoaded && <ImageLoading />}
+
+            <img
+              src={data.heroavatar}
+              alt="avatar"
+              draggable={false}
+              onLoad={() => setImgLoaded(true)}
+              onError={() => setImgLoaded(false)}
+              onMouseDown={(e) => e.preventDefault()}
+              onContextMenu={(e) => e.preventDefault()}
+              className={`${
+                imgLoaded ? "opacity-100" : "opacity-0"
+              } rounded-lg w-full h-full object-cover transition-opacity duration-300`}
+            />
+          </div>
+        </motion.div>
       </motion.div>
 
-      <h1 className="font-hero font-bold mt-6 text-5xl text-text">
+      <motion.h1
+        variants={nameContainer}
+        className="font-hero font-bold mt-6 text-5xl text-text"
+      >
         <ShinyText
           color={theme === "light" ? "#000000" : "#b5b5b5"}
           shineColor={theme === "light" ? "#646464" : "#ffffff"}
         >
           {[...data.name].map((c, i) => (
-            <span
-              key={i}
-              data-aos="fade-zoom-in"
-              data-aos-delay={(i + 1) * 50}
-              data-aos-easing="ease-in-sine"
-              data-aos-once="true"
-            >
+            <motion.span key={i} variants={letter}>
               {c}
-            </span>
+            </motion.span>
           ))}
         </ShinyText>
-      </h1>
+      </motion.h1>
 
-      <p
+      <motion.p
+        variants={description}
         className="font-display font-normal text-xl p-3"
-        data-aos="flip-down"
-        data-aos-once="true"
-        data-aos-delay={data.name.length * 50 + 100}
       >
         {data.herodesc}
-      </p>
+      </motion.p>
 
       <div className="h-35" />
 
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: isScrolled ? 0 : 0.8, y: 0 }}
-        transition={{ duration: 0.35, delay: entranceOk ? 0 : data.name.length * 0.05 + 0.3, ease: "easeOut" }}
-        onAnimationComplete={() => setEntranceOk(true)}
+        variants={scrollHint}
+        animate={isScrolled ? "hidden" : "show"}
         className="text-xs text-text flex flex-col items-center gap-2"
       >
         <motion.div
@@ -101,6 +163,6 @@ export default function Hero({ data, isScrolled, theme, id }: HeroProps) {
 
         <p className="mt-3">Scroll Down</p>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }
