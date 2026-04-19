@@ -1,13 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="icon" type="image/svg+xml" href="https://fvjr156.github.io/my-portfolio/favicon.svg" />
     <script>
       (function () {
         try {
-          const stored = localStorage.getItem("theme");
+          const stored = localStorage.getItem("websiteThemeMode");
           const theme = stored ?? "dark";
 
           if (theme === "dark") {
@@ -19,6 +16,13 @@
         } catch (_) {}
       })();
     </script>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://fvjr156.github.io/my-portfolio/favicon.svg"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
     <title>FVJ Portfolio | Web Developer Portfolio</title>
@@ -30,10 +34,7 @@
     <meta name="author" content="FVJ" />
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://fvjr156.github.io/my-portfolio/"
-    />
+    <meta property="og:url" content="https://fvjr156.github.io/my-portfolio/" />
     <meta
       property="og:title"
       content="FVJ Portfolio | Web Developer Portfolio"

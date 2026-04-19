@@ -11,12 +11,17 @@ import "./styles/App.css";
 import Contact from "./components/Contact";
 import { Projects, ProjectsIconBar } from "./components/Projects";
 import { useInView } from "framer-motion";
-import { Bounce, ToastContainer, type Theme } from "react-toastify";
+import { Bounce, ToastContainer } from "react-toastify";
 
 export default function App() {
+  type Theme = "light" | "dark";
+
   const [floatingUIComponents, setFloatingUIComponents] =
     useState<boolean>(false);
-  const [theme, setTheme] = useState(localStorage.getItem("theme"));
+
+  const [theme, setTheme] = useState<Theme>(
+    () => (localStorage.getItem("websiteThemeMode") as Theme) ?? "dark",
+  );
 
   const projectIconBarShowTriggerRef = useRef<Element>(null);
   const projectIconBarShowTriggerRefInView = useInView(
@@ -42,13 +47,12 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", theme === "dark");
-    if (theme === "dark") {
-      document.documentElement.style.backgroundColor = "#090000";
-    } else {
-      document.documentElement.style.backgroundColor = "#f7f7f1";
-    }
-    localStorage.setItem("theme", theme as string);
+    const root = document.documentElement;
+
+    root.classList.toggle("dark", theme === "dark");
+    root.style.backgroundColor = theme === "dark" ? "#090000" : "#f7f7f1";
+
+    localStorage.setItem("websiteThemeMode", theme);
   }, [theme]);
 
   useEffect(() => {

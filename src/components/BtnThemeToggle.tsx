@@ -9,7 +9,7 @@ export default function BtnThemeToggle({ theme, setTheme }: BtnThemeToggleProps)
                 cursor-pointer
                 p-2
             `}
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}>
             {theme === "light" ? <Moon size={20} strokeWidth={2} /> : <Sun size={20} strokeWidth={2} />}
         </button>
