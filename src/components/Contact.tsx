@@ -17,7 +17,7 @@ export default function Contact({ data, id }: { data: any[]; id: string }) {
   );
 }
 
-function ContactItem({ item, delay }) {
+function ContactItem({ item, delay}: {item: any, delay: number}) {
   const [loaded, setLoaded] = useState(false);
 
   return (

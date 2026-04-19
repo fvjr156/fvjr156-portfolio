@@ -8,7 +8,7 @@
       (function () {
         try {
           const stored = localStorage.getItem("theme");
-          const theme = stored ?? "light";
+          const theme = stored ?? "dark";
 
           if (theme === "dark") {
             document.documentElement.classList.add("dark");

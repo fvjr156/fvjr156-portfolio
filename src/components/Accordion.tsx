@@ -11,7 +11,7 @@ export const Accordion = ({
   open,
   children,
   styles,
-  aosData = { animType: "", animdelay: 0, animDuration: 0, once: true }
+  aosData = { animType: "", animdelay: 0, animDuration: 0, once: true },
 }: AccordionProps) => {
   return (
     <AccordionContext.Provider value={{ open }}>
@@ -25,18 +25,15 @@ export const Accordion = ({
         hover:-translate-y-2 transition-transform duration-300 ease-in
         relative pb-15 rounded-t-2xl z-10
         w-full border border-border/50 backdrop-blur-md overflow-hidden
-        ">
+        "
+      >
         {children}
       </div>
     </AccordionContext.Provider>
   );
 };
 
-export const AccordionHeader = ({
-  children,
-  onClick,
-  styles
-}) => {
+export const AccordionHeader = ({ children, onClick, styles }: {children: any, onClick: any, styles: any}) => {
   const { open } = useContext(AccordionContext);
 
   return (
@@ -48,9 +45,7 @@ export const AccordionHeader = ({
                  text-left font-medium
 "
     >
-      <span className="text-sm md:text-base">
-        {children}
-      </span>
+      <span className="text-sm md:text-base">{children}</span>
 
       <motion.span
         animate={{ rotate: open ? 180 : 0 }}
@@ -63,9 +58,7 @@ export const AccordionHeader = ({
   );
 };
 
-export const AccordionBody = ({
-  children,
-}) => {
+export const AccordionBody = ({ children }: any) => {
   const { open } = useContext(AccordionContext);
 
   return (
@@ -81,9 +74,7 @@ export const AccordionBody = ({
           }}
           className="overflow-hidden"
         >
-          <div className="px-5 pb-5 text-sm">
-            {children}
-          </div>
+          <div className="px-5 pb-5 text-sm">{children}</div>
         </motion.div>
       )}
     </AnimatePresence>

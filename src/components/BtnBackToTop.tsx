@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUp } from "react-feather";
 
-export default function BtnBackToTop({ visible }) {
+export default function BtnBackToTop({ visible }: any) {
   return (
     <motion.button
       aria-label="back to top"

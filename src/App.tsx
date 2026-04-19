@@ -11,12 +11,12 @@ import "./styles/App.css";
 import Contact from "./components/Contact";
 import { Projects, ProjectsIconBar } from "./components/Projects";
 import { useInView } from "framer-motion";
-import { Bounce, ToastContainer } from "react-toastify";
+import { Bounce, ToastContainer, type Theme } from "react-toastify";
 
 export default function App() {
   const [floatingUIComponents, setFloatingUIComponents] =
     useState<boolean>(false);
-  const [theme, setTheme] = useState<string>(localStorage.getItem("theme"));
+  const [theme, setTheme] = useState(localStorage.getItem("theme"));
 
   const projectIconBarShowTriggerRef = useRef<Element>(null);
   const projectIconBarShowTriggerRefInView = useInView(
@@ -48,7 +48,7 @@ export default function App() {
     } else {
       document.documentElement.style.backgroundColor = "#f7f7f1";
     }
-    localStorage.setItem("theme", theme);
+    localStorage.setItem("theme", theme as string);
   }, [theme]);
 
   useEffect(() => {
@@ -60,7 +60,7 @@ export default function App() {
 
   type PortfolioSection = {
     type?: "hr";
-    Component?: React.ComponentType<any>;
+    Component: React.ComponentType<any>;
     props?: Record<string, any>;
     layoutProps?: Record<string, any>;
   };
@@ -93,12 +93,12 @@ export default function App() {
     //     selectedIndex: personalProjectsIndex,
     //   },
     // },
-    { type: "hr" },
+    { Component: HR, type: "hr" },
     {
       Component: Certificates,
       props: { data: data.aboutInfo.certifications, id: "certificates" },
     },
-    { type: "hr" },
+    { Component: HR, type: "hr" },
     {
       Component: Contact,
       props: { id: "contact", data: data.contactinformation },
@@ -118,7 +118,7 @@ export default function App() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme={theme}
+        theme={theme as Theme}
         transition={Bounce}
       />
       <Toolbar

@@ -11,18 +11,18 @@ export type ProjectsProps = {
   header: string;
   id?: string;
   projectIconBarShowTriggerRef: any;
-  selectedIndex?: number;
+  selectedIndex: number;
 };
 
 export type ToolbarProps = {
   visible: boolean;
-  theme: string;
-  setTheme: React.Dispatch<React.SetStateAction<string>>;
+  theme: string | null;
+  setTheme: React.Dispatch<React.SetStateAction<any>>;
 };
 
 export type BtnThemeToggleProps = {
-  theme: string;
-  setTheme: React.Dispatch<React.SetStateAction<string>>;
+  theme: string | null;
+  setTheme: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
 export type ShinyTextProps = {

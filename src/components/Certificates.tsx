@@ -20,7 +20,7 @@ export default function Certificates({
       <div
         className={`${open > -1 ? "h-180" : "h-130"} relative overflow-visible accordion-transition`}
       >
-        {data.map((x, index) => (
+        {data.map((x: any, index: number) => (
           <Accordion
             key={index}
             open={open === index}
@@ -71,7 +71,7 @@ function CertificateCard({ cert }: { cert: any }) {
           onError={() => setLoaded(true)}
           onMouseDown={(e) => e.preventDefault()}
           onContextMenu={(e) => e.preventDefault()}
-          className={`w-full h-full ${cert.contain ? "object-contain" : "object-cover"} transition-opacity duration-500 ${loaded ? "opacity-100 dark:opacity-80 dark:hover:opacity-100" : "opacity-0"}`}
+          className={`w-[90vw] h-auto object-center transition-opacity duration-500 ${loaded ? "opacity-100 dark:opacity-80 dark:hover:opacity-100" : "opacity-0"}`}
         />
       </div>
 

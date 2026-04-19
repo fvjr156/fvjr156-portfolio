@@ -34,7 +34,7 @@ export function ProjectsFrameView({ project }: { project: ProjectItem }) {
   return (
     <div
       className="
-        w-full h-100 rounded-2xl overflow-hidden
+        w-full h-110 rounded-2xl overflow-hidden
         border border-accent/80
         backdrop-blur-md bg-transparent
     "
@@ -105,8 +105,9 @@ export function ProjectsIconBar({
         px-4 py-2
         bg-transparent backdrop-blur-md
         border border-accent
-        flex gap-3
+        flex gap-3 flex-row
         rounded-2xl z-50
+        overflow-scroll
       "
     >
       {data.map((item, i) => (
