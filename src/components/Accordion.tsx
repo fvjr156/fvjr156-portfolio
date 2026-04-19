@@ -1,24 +1,18 @@
 import { createContext, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "react-feather";
+import type { AccordionProps } from "../types/Types";
 
 const AccordionContext = createContext({
   open: false,
 });
-
-type AosData = {
-  animType: string;
-  animdelay: number;
-  animDuration: number;
-  once: boolean
-}
 
 export const Accordion = ({
   open,
   children,
   styles,
   aosData = { animType: "", animdelay: 0, animDuration: 0, once: true }
-}: { open: boolean, children: React.ReactNode, styles: React.CSSProperties, aosData: AosData }) => {
+}: AccordionProps) => {
   return (
     <AccordionContext.Provider value={{ open }}>
       <div
@@ -29,7 +23,7 @@ export const Accordion = ({
         style={styles}
         className="
         hover:-translate-y-2 transition-transform duration-300 ease-in
-        relative pb-15 rounded-t-2xl
+        relative pb-15 rounded-t-2xl z-10
         w-full border border-border/50 backdrop-blur-md overflow-hidden
         ">
         {children}

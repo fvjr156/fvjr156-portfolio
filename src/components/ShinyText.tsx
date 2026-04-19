@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
-import { motion, useMotionValue, useAnimationFrame, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useAnimationFrame, useTransform, MotionValue } from 'framer-motion';
+import type { GradientStyleProps, ShinyTextProps } from '../types/Types';
 
 const ShinyText = ({
   children,
@@ -13,15 +14,15 @@ const ShinyText = ({
   pauseOnHover = false,
   direction = 'left',
   delay = 0
-}) => {
-  const [isPaused, setIsPaused] = useState(false);
-  const progress = useMotionValue(0);
-  const elapsedRef = useRef(0);
-  const lastTimeRef = useRef(null);
-  const directionRef = useRef(direction === 'left' ? 1 : -1);
+}: ShinyTextProps) => {
+  const [isPaused, setIsPaused] = useState<boolean>(false);
+  const progress = useMotionValue<number>(0);
+  const elapsedRef = useRef<number>(0);
+  const lastTimeRef = useRef<null | number>(null);
+  const directionRef = useRef<number>(direction === 'left' ? 1 : -1);
 
-  const animationDuration = speed * 1000;
-  const delayDuration = delay * 1000;
+  const animationDuration: number = speed * 1000;
+  const delayDuration: number = delay * 1000;
 
   useAnimationFrame(time => {
     if (disabled || isPaused) {
@@ -34,39 +35,39 @@ const ShinyText = ({
       return;
     }
 
-    const deltaTime = time - lastTimeRef.current;
+    const deltaTime: number = time - lastTimeRef.current;
     lastTimeRef.current = time;
 
     elapsedRef.current += deltaTime;
 
     if (yoyo) {
-      const cycleDuration = animationDuration + delayDuration;
-      const fullCycle = cycleDuration * 2;
-      const cycleTime = elapsedRef.current % fullCycle;
+      const cycleDuration: number = animationDuration + delayDuration;
+      const fullCycle: number = cycleDuration * 2;
+      const cycleTime: number = elapsedRef.current % fullCycle;
 
       if (cycleTime < animationDuration) {
         // Forward animation: 0 -> 100
-        const p = (cycleTime / animationDuration) * 100;
+        const p: number = (cycleTime / animationDuration) * 100;
         progress.set(directionRef.current === 1 ? p : 100 - p);
       } else if (cycleTime < cycleDuration) {
         // Delay at end
         progress.set(directionRef.current === 1 ? 100 : 0);
       } else if (cycleTime < cycleDuration + animationDuration) {
         // Reverse animation: 100 -> 0
-        const reverseTime = cycleTime - cycleDuration;
-        const p = 100 - (reverseTime / animationDuration) * 100;
+        const reverseTime: number = cycleTime - cycleDuration;
+        const p: number = 100 - (reverseTime / animationDuration) * 100;
         progress.set(directionRef.current === 1 ? p : 100 - p);
       } else {
         // Delay at start
         progress.set(directionRef.current === 1 ? 0 : 100);
       }
     } else {
-      const cycleDuration = animationDuration + delayDuration;
-      const cycleTime = elapsedRef.current % cycleDuration;
+      const cycleDuration: number = animationDuration + delayDuration;
+      const cycleTime: number = elapsedRef.current % cycleDuration;
 
       if (cycleTime < animationDuration) {
         // Animation phase: 0 -> 100
-        const p = (cycleTime / animationDuration) * 100;
+        const p: number = (cycleTime / animationDuration) * 100;
         progress.set(directionRef.current === 1 ? p : 100 - p);
       } else {
         // Delay phase - hold at end (shine off-screen)
@@ -83,17 +84,17 @@ const ShinyText = ({
   }, [direction]);
 
   // Transform: p=0 -> 150% (shine off right), p=100 -> -50% (shine off left)
-  const backgroundPosition = useTransform(progress, p => `${150 - p * 2}% center`);
+  const backgroundPosition: MotionValue<string> = useTransform(progress, p => `${150 - p * 2}% center`);
 
-  const handleMouseEnter = useCallback(() => {
+  const handleMouseEnter: (()=>void) = useCallback(() => {
     if (pauseOnHover) setIsPaused(true);
   }, [pauseOnHover]);
 
-  const handleMouseLeave = useCallback(() => {
+  const handleMouseLeave: (()=>void) = useCallback(() => {
     if (pauseOnHover) setIsPaused(false);
   }, [pauseOnHover]);
 
-  const gradientStyle = {
+  const gradientStyle: GradientStyleProps = {
     backgroundImage: `linear-gradient(${spread}deg, ${color} 0%, ${color} 35%, ${shineColor} 50%, ${color} 65%, ${color} 100%)`,
     backgroundSize: '200% auto',
     WebkitBackgroundClip: 'text',

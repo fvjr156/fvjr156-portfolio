@@ -1,6 +1,7 @@
 import { Sun, Moon } from "react-feather";
+import type { BtnThemeToggleProps } from "../types/Types";
 
-export default function BtnThemeToggle({ theme, setTheme }) {
+export default function BtnThemeToggle({ theme, setTheme }: BtnThemeToggleProps) {
     return (
         <button
             className={`

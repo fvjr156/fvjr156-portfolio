@@ -8,12 +8,14 @@
             "title": "ARISE",
             "description": "Computer perts showcase, assembly and disassembly using Augmented Reality (AR). Made with Unity and Vuforia.",
             "image": "demos/arise.webp",
+            "logo": "logos/arise.webp",
             "github": "https://www.youtube.com/watch?v=T1iV1YqTDN4"
         },
         {
             "title": "BridgeXSign",
             "description": "Translate certain American Sign Language (ASL) gestures to English, English speech to text. Made with Android, MediaPipe, and TensorflowLite.",
             "image": "demos/bridge.webp",
+            "logo": "logos/bridge.webp",
             "github": "https://www.youtube.com/watch?v=q6gc7SaPXLw"
         }
     ],
@@ -22,17 +24,20 @@
             "title": "Brick Breaker Game",
             "description": "Re-creation of a popular 1970s game using the Java Swing GUI toolkit.",
             "image": "demos/brickbreaker.webp",
+            "logo": "logos/brickgam.webp",
             "github": "https://github.com/fvjr156/fvjr156-brick-breaker-game"
         },
         {
             "title": "musicapp",
             "description": "A web application for playing local music files. Displays music metadata using music-metadata-browser API.",
             "image": "demos/musicplayer.webp",
+            "logo": "logos/musicpl.webp",
             "attentiongif": "demos/musicplayerdemo.gif",
             "github": "https://fvjr156.github.io/awesomepage/musicplayer/"
         },
         {
             "title": "AllowanceCalculator",
+            "logo": "logos/allowance.webp",
             "description": "An Android application for tracking allowances and expenses, with running balance display and PDF export functionalities.",
             "image": "demos/allowancecalc.webp",
             "github": "https://github.com/fvjr156/AllowanceCalculator"

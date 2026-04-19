@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import navbar_elements from "../data/navbar_elements.json";
 import BtnThemeToggle from "./BtnThemeToggle";
+import type { ToolbarProps } from "../types/Types";
+import BtnAudioPlayer from "./BtnAudioPlayer";
+import bgm from "../assets/bgm.mp3";
 
-export default function Toolbar({ visible, theme, setTheme }) {
+export default function Toolbar({ visible, theme, setTheme }: ToolbarProps) {
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -13,11 +16,11 @@ export default function Toolbar({ visible, theme, setTheme }) {
       animate={visible ? "visible" : "hidden"}
       variants={{
         hidden: { y: -80, opacity: 0 },
-        visible: { y: 0, opacity: 1 }
+        visible: { y: 0, opacity: 1 },
       }}
       transition={{
         duration: 0.35,
-        ease: [0.22, 1, 0.36, 1]
+        ease: [0.22, 1, 0.36, 1],
       }}
       className="
         md:flex
@@ -26,7 +29,7 @@ export default function Toolbar({ visible, theme, setTheme }) {
         bgcol-transition
         text-text 
         flex-row justify-between
-        p-3 px-10 z-11
+        p-3 px-10 z-50
         md:m-2 md:mx-5 
         md:backdrop-blur-md md:bg-transparent
         backdrop-blur-none bg-background
@@ -53,7 +56,10 @@ export default function Toolbar({ visible, theme, setTheme }) {
           </button>
         ))}
       </nav>
-      <BtnThemeToggle theme={theme} setTheme={setTheme} />
+      <div>
+        <BtnAudioPlayer src={bgm} />
+        <BtnThemeToggle theme={theme} setTheme={setTheme} />
+      </div>
     </motion.header>
   );
 }

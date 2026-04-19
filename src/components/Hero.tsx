@@ -3,8 +3,9 @@ import ImageLoading from "./ImageLoading";
 import { ArrowDown } from "react-feather";
 import ShinyText from "./ShinyText";
 import { useState } from "react";
+import type { HeroProps } from "../types/Types";
 
-export default function Hero({ data, isScrolled, theme, id }) {
+export default function Hero({ data, isScrolled, theme, id }: HeroProps) {
   const [imgLoaded, setImgLoaded] = useState(false);
   const [entranceOk, setEntranceOk] = useState(false);
 
@@ -43,7 +44,7 @@ export default function Hero({ data, isScrolled, theme, id }) {
         </div>
       </motion.div>
 
-      <h1 className="font-display mt-6 text-4xl font-bold text-text">
+      <h1 className="font-hero font-bold mt-6 text-5xl text-text">
         <ShinyText
           color={theme === "light" ? "#000000" : "#b5b5b5"}
           shineColor={theme === "light" ? "#646464" : "#ffffff"}
@@ -63,7 +64,7 @@ export default function Hero({ data, isScrolled, theme, id }) {
       </h1>
 
       <p
-        className="font-display p-3"
+        className="font-display font-normal text-xl p-3"
         data-aos="flip-down"
         data-aos-once="true"
         data-aos-delay={data.name.length * 50 + 100}

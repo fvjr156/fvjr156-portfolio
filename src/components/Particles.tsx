@@ -1,21 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Renderer, Camera, Geometry, Program, Mesh } from 'ogl';
-
-interface ParticlesProps {
-  particleCount?: number;
-  particleSpread?: number;
-  speed?: number;
-  particleColors?: string[];
-  moveParticlesOnHover?: boolean;
-  particleHoverFactor?: number;
-  alphaParticles?: boolean;
-  particleBaseSize?: number;
-  sizeRandomness?: number;
-  cameraDistance?: number;
-  disableRotation?: boolean;
-  pixelRatio?: number;
-  className?: string;
-}
+import type { ParticlesProps } from '../types/Types';
 
 const defaultColors: string[] = ['#ffffff', '#ffffff', '#ffffff'];
 

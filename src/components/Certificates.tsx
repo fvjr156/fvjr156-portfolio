@@ -2,20 +2,18 @@ import { useState } from "react";
 import { Accordion, AccordionHeader, AccordionBody } from "./Accordion";
 import { motion } from "framer-motion";
 import ImageLoading from "./ImageLoading";
+import type { CertificatesProps } from "../types/Types";
 
 export default function Certificates({
   data,
   id,
-}: {
-  data: any[];
-  id?: string;
-}) {
+}: CertificatesProps) {
   const [open, setOpen] = useState<number>(-1);
   const handleOpen = (value: number) => setOpen(open === value ? -1 : value);
 
   return (
     <div className="w-full max-w-2xl mx-auto px-4 sm:px-6" id={id}>
-      <h1 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-10 text-center">
+      <h1 className="text-2xl font-bold font-hero sm:text-4xl mb-8 sm:mb-10 text-center z-10">
         Achievements
       </h1>
 

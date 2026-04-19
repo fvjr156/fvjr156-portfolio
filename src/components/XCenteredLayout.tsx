@@ -1,15 +1,27 @@
+import type { XCenteredLayoutProps } from "../types/Types";
 import Particles from "./Particles";
 
 export default function XCenteredLayout({
   children,
   herobg = false,
   particles = false,
-}) {
+}: XCenteredLayoutProps) {
   return (
     <div
       className={`
         relative
         ${herobg ? "bg-hero bg-cover bg-no-repeat" : ""}
+        ${
+          particles &&
+          `
+              before:content=[''] before:absolute
+              before:-top-1 before:left-0
+              before:w-full before:h-3
+              before:bg-transparent
+              before:backdrop-blur-sm before:z-1
+              before:rounded-t-2xl
+            `
+        } 
         flex flex-row
         justify-center items-center
       `}
@@ -29,7 +41,11 @@ export default function XCenteredLayout({
           />
         </div>
       )}
-      <div className="relative z-10 w-full">
+      <div
+        className={`
+          relative w-full h-full
+          `}
+      >
         {children}
       </div>
     </div>
