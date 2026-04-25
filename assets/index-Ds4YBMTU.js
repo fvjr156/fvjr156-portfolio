@@ -190,7 +190,7 @@ Error generating stack: `+e.message+`
             transition-colors duration-150\r
           `,children:[`View Project`,u]}),t[12]=n.github,t[13]=d);let f;t[14]!==c||t[15]!==l||t[16]!==d?(f=(0,U.jsxs)(`div`,{className:`p-5 flex flex-col gap-3`,children:[c,l,d]}),t[14]=c,t[15]=l,t[16]=d,t[17]=f):f=t[17];let p;return t[18]!==n.title||t[19]!==f||t[20]!==s?(p=(0,U.jsx)(`div`,{className:`\r
         w-full h-110 rounded-2xl overflow-hidden\r
-        border border-accent/80\r
+        border border-text\r
         backdrop-blur-md bg-transparent\r
     `,children:(0,U.jsx)(Ic,{mode:`wait`,children:(0,U.jsxs)(Du.div,{initial:r,animate:i,exit:a,transition:o,children:[s,f]},n.title)})}),t[18]=n.title,t[19]=f,t[20]=s,t[21]=p):p=t[21],p}function uh(e){let t=(0,Ru.c)(15),{data:n,visible:r,selectedIndex:i,onSelect:a}=e,o;t[0]===Symbol.for(`react.memo_cache_sentinel`)?(o={opacity:0,y:100},t[0]=o):o=t[0];let s=+!!r,c=r?0:100,l;t[1]!==s||t[2]!==c?(l={opacity:s,y:c},t[1]=s,t[2]=c,t[3]=l):l=t[3];let u;t[4]===Symbol.for(`react.memo_cache_sentinel`)?(u={duration:.35},t[4]=u):u=t[4];let d;if(t[5]!==n||t[6]!==a||t[7]!==i){let e;t[9]!==a||t[10]!==i?(e=(e,t)=>(0,U.jsx)(`button`,{onClick:()=>a(t),className:i===t?`ring-2 ring-accent/50 rounded-md`:``,children:(0,U.jsx)(dh,{logo:e.logo,fallback:e.title})},t),t[9]=a,t[10]=i,t[11]=e):e=t[11],d=n.map(e),t[5]=n,t[6]=a,t[7]=i,t[8]=d}else d=t[8];let f;return t[12]!==l||t[13]!==d?(f=(0,U.jsx)(Du.div,{initial:o,animate:l,transition:u,className:`\r
         fixed bottom-5 left-1/2 -translate-x-1/2\r
