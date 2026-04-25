@@ -243,7 +243,7 @@ Error generating stack: `+e.message+`
               border border-border\r
               bg-muted\r
             `,children:[d,h]}),t[10]=d,t[11]=h,t[12]=g):g=t[12];let _;t[13]===n.school?_=t[14]:(_=(0,G.jsx)(`h2`,{className:`text-lg sm:text-xl font-semibold`,children:n.school}),t[13]=n.school,t[14]=_);let v;t[15]===n.location?v=t[16]:(v=(0,G.jsx)(`p`,{className:`text-sm opacity-80`,children:n.location}),t[15]=n.location,t[16]=v);let y;t[17]===n.course?y=t[18]:(y=(0,G.jsx)(`p`,{className:`mt-2 font-medium`,children:n.course}),t[17]=n.course,t[18]=y);let x;t[19]!==n.from||t[20]!==n.to?(x=(0,G.jsxs)(`p`,{className:`text-sm mt-1 text-accent`,children:[n.from,` — `,n.to]}),t[19]=n.from,t[20]=n.to,t[21]=x):x=t[21];let S;t[22]!==_||t[23]!==v||t[24]!==y||t[25]!==x?(S=(0,G.jsxs)(`div`,{className:`flex-1`,children:[_,v,y,x]}),t[22]=_,t[23]=v,t[24]=y,t[25]=x,t[26]=S):S=t[26];let C;t[27]!==g||t[28]!==S?(C=(0,G.jsx)(`div`,{className:`\r
-          rounded-2xl border border-text dark:border-accent/80 hover:-translate-y-1 hover:drop-shadow-accent/50 hover:drop-shadow-lg transition-all duration-300 ease-in-circ\r
+          rounded-2xl border border-accent/80 hover:-translate-y-1 hover:drop-shadow-accent/50 hover:drop-shadow-lg transition-all duration-300 ease-in-circ\r
           bg-card/60 backdrop-blur-sm\r
           shadow-sm\r
           p-5 sm:p-6\r
