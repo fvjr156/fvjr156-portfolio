@@ -1,42 +1,14 @@
 import type React from "react";
 
-export type XCenteredLayoutProps = {
-  children: React.ReactNode;
-  herobg?: boolean;
-  particles?: boolean;
-};
+export type ImageLink = string;
+export type ResourceLink = string;
+export type TagsType = string[];
 
-export type ProjectsProps = {
-  data: Record<string, any>;
-  header: string;
-  id?: string;
-  projectIconBarShowTriggerRef: any;
-  selectedIndex: number;
-};
-
-export type ToolbarProps = {
-  visible: boolean;
-  theme: string | null;
-  setTheme: React.Dispatch<React.SetStateAction<any>>;
-};
-
-export type BtnThemeToggleProps = {
-  theme: string | null;
-  setTheme: React.Dispatch<React.SetStateAction<string | null>>;
-};
-
-export type ShinyTextProps = {
-  children: React.ReactNode;
-  disabled?: boolean;
-  speed?: number;
-  className?: string;
-  color?: string;
-  shineColor?: string;
-  spread?: number;
-  yoyo?: boolean;
-  pauseOnHover?: boolean;
-  direction?: string;
-  delay?: number;
+export type AosData = {
+  animType: string;
+  animdelay: number;
+  animDuration: number;
+  once: boolean;
 };
 
 export type GradientStyleProps = {
@@ -45,6 +17,94 @@ export type GradientStyleProps = {
   WebkitBackgroundClip?: string;
   backgroundClip?: string;
   WebkitTextFillColor?: string;
+};
+
+export type TypeCertificateItem = {
+  name: string;
+  certpreviewimg: ImageLink;
+  logo: ImageLink;
+  institution: string;
+  date: string;
+  certlink: ImageLink;
+  tags: TagsType;
+  contain?: boolean;
+};
+
+export type TypeContactInfo = {
+  logo: ImageLink;
+  name: string;
+  link: ResourceLink;
+};
+
+export type TypeEducationItem = {
+  school: string;
+  image: ImageLink;
+  location: string;
+  course: string;
+  from: string;
+  to: string;
+};
+
+export type TypeFooter = {
+  copyr: string;
+};
+
+export type TypeProjects = {
+  title: string;
+  description: string;
+  image: ImageLink;
+  logo: ImageLink;
+  github: ResourceLink;
+};
+
+export type TypePortfolio = {
+  name: string;
+  heroavatar: ImageLink;
+  herodesc: string;
+  intro: string;
+  projects: TypeProjects[];
+  personalProjects: TypeProjects[];
+  aboutInfo: {
+    residence: string;
+    education: TypeEducationItem[];
+  };
+  certifications: TypeCertificateItem[];
+  contactinformation: TypeContactInfo[];
+  footerInfo: TypeFooter;
+};
+
+export type AccordionProps = {
+  open: boolean;
+  children: React.ReactNode;
+  styles: React.CSSProperties;
+  aosData: AosData;
+};
+
+export type BtnThemeToggleProps = {
+  theme: string | null;
+  setTheme: React.Dispatch<React.SetStateAction<string | null>>;
+};
+
+export type CertificatesProps = {
+  data: TypeCertificateItem[];
+  id: string;
+};
+
+export type ContactProps = { 
+  data: TypeContactInfo[]; 
+  id: string 
+};
+
+export type EducationItemProps = {
+  data: TypeEducationItem;
+  index: number;
+};
+
+export type HeroProps = {
+  data: TypePortfolio;
+  isScrolled: boolean;
+  theme: string;
+  id?: string;
 };
 
 export type ParticlesProps = {
@@ -63,28 +123,43 @@ export type ParticlesProps = {
   className?: string;
 };
 
-export type HeroProps = {
+export type PortfolioSection = {
+  type?: "hr";
+  Component: React.ComponentType<any>;
+  props?: Record<string, any>;
+  layoutProps?: Record<string, any>;
+};
+
+export type ProjectsProps = {
   data: Record<string, any>;
-  isScrolled: boolean;
-  theme: string;
+  header: string;
   id?: string;
+  projectIconBarShowTriggerRef: any;
+  selectedIndex: number;
 };
 
-export type CertificatesProps = {
-  data: Record<string, any>;
-  id: string;
-};
-
-export type AosData = {
-  animType: string;
-  animdelay: number;
-  animDuration: number;
-  once: boolean;
-};
-
-export type AccordionProps = {
-  open: boolean;
+export type ShinyTextProps = {
   children: React.ReactNode;
-  styles: React.CSSProperties;
-  aosData: AosData;
+  disabled?: boolean;
+  speed?: number;
+  className?: string;
+  color?: string;
+  shineColor?: string;
+  spread?: number;
+  yoyo?: boolean;
+  pauseOnHover?: boolean;
+  direction?: string;
+  delay?: number;
+};
+
+export type ToolbarProps = {
+  visible: boolean;
+  theme: string | null;
+  setTheme: React.Dispatch<React.SetStateAction<any>>;
+};
+
+export type XCenteredLayoutProps = {
+  children: React.ReactNode;
+  herobg?: boolean;
+  particles?: boolean;
 };

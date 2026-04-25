@@ -6,6 +6,7 @@
   ],
   "compilerOptions": {
     "jsx": "react-jsx",
+    "module": "preserve",
     "moduleResolution": "bundler",
     "skipLibCheck": true,
     "noImplicitAny": false

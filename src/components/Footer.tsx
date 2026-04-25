@@ -1,6 +1,7 @@
 import styles from "../styles/Footer.module.css";
+import type { TypeFooter } from "../types/Types";
 
-export default function Footer({ data }: any) {
+export default function Footer({ data }: {data: TypeFooter}) {
     return (
         <footer 
         className={`

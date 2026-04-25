@@ -107,7 +107,7 @@ export function ProjectsIconBar({
         border border-accent
         flex gap-3 flex-row
         rounded-2xl z-50
-        overflow-scroll
+        overflow-scroll 
       "
     >
       {data.map((item, i) => (

@@ -12,6 +12,8 @@ import Contact from "./components/Contact";
 import { Projects, ProjectsIconBar } from "./components/Projects";
 import { useInView } from "framer-motion";
 import { Bounce, ToastContainer } from "react-toastify";
+import Education from "./components/Education";
+import type { PortfolioSection } from "./types/Types";
 
 export default function App() {
   type Theme = "light" | "dark";
@@ -62,13 +64,6 @@ export default function App() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  type PortfolioSection = {
-    type?: "hr";
-    Component: React.ComponentType<any>;
-    props?: Record<string, any>;
-    layoutProps?: Record<string, any>;
-  };
-
   const projectsData = [...data.projects, ...data.personalProjects];
 
   const portfolioSections: PortfolioSection[] = [
@@ -97,6 +92,14 @@ export default function App() {
     //     selectedIndex: personalProjectsIndex,
     //   },
     // },
+    { Component: HR, type: "hr" },
+    {
+      Component: Education,
+      props: {
+        data: data.aboutInfo.education,
+        id: "education",
+      },
+    },
     { Component: HR, type: "hr" },
     {
       Component: Certificates,

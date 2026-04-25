@@ -1,7 +1,8 @@
 import { useState } from "react";
 import ImageLoading from "./ImageLoading";
+import type { ContactProps } from "../types/Types";
 
-export default function Contact({ data, id }: { data: any[]; id: string }) {
+export default function Contact({ data, id }: ContactProps) {
   return (
     <div className="w-full max-w-2xl mx-auto mb-10 px-4 sm:px-6" id={id}>
       <h1 className="text-2xl font-bold font-hero sm:text-4xl mb-8 sm:mb-10 text-center">

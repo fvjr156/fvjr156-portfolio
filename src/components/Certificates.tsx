@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Accordion, AccordionHeader, AccordionBody } from "./Accordion";
 import { motion } from "framer-motion";
 import ImageLoading from "./ImageLoading";
-import type { CertificatesProps } from "../types/Types";
+import type { CertificatesProps, TypeCertificateItem } from "../types/Types";
 
 export default function Certificates({
   data,
@@ -20,7 +20,7 @@ export default function Certificates({
       <div
         className={`${open > -1 ? "h-180" : "h-130"} relative overflow-visible accordion-transition`}
       >
-        {data.map((x: any, index: number) => (
+        {data.map((x: TypeCertificateItem, index: number) => (
           <Accordion
             key={index}
             open={open === index}
