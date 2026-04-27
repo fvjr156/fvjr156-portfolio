@@ -5,14 +5,14 @@
     "intro": "  20 year-old Computer Science undergraduate skilled in full-stack web and mobile app development, with primary expertise in React, Android (Java), and backend design.",
     "projects": [
         {
-            "title": "Mobile Sign Language System",
+            "title": "ML-Based Sign Language Translator Application",
             "description": "Translate certain American Sign Language (ASL) gestures to English, English speech to text. Made with Android, MediaPipe, and TFLite.",
             "image": "https://fvjr156.github.io/my-portfolio/demos/isign.webp",
             "logo": "https://fvjr156.github.io/my-portfolio/logos/isign.webp",
             "github": "https://www.youtube.com/watch?v=q6gc7SaPXLw"
         },
         {
-            "title": "ARise - My AR Computer Assembly",
+            "title": "Augmented Reality PC Assembly and Disassembly Application",
             "description": "Computer perts showcase, assembly and disassembly using Augmented Reality (AR). Made with Unity and Vuforia.",
             "image": "https://fvjr156.github.io/my-portfolio/demos/preview_arise.webp",
             "logo": "https://fvjr156.github.io/my-portfolio/logos/arise.webp",
