@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: 'Satoshi-Variable';
-  src: url('../assets/Satoshi-Variable.woff2') format('woff2');
+  src: url('https://fvjr156.github.io/my-portfolio/webfonts/Satoshi-Variable.woff2') format('woff2');
   font-weight: 300 900;
   font-display: swap;
   font-style: normal;
@@ -11,7 +11,7 @@
 
 @font-face {
   font-family: 'Graphik';
-  src: url('../assets/Graphik.woff2') format('woff2');
+  src: url('https://fvjr156.github.io/my-portfolio/webfonts/Graphik.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: 'Inter';
-  src: url('../assets/Inter-Regular.woff2') format('woff2');
+  src: url('https://fvjr156.github.io/my-portfolio/webfonts/Inter-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

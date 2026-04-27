@@ -1,9 +1,10 @@
 import { motion, type Variants } from "framer-motion";
 import { useState } from "react";
 import ImageLoading from "./ImageLoading";
-import { ArrowDown } from "react-feather";
+import { ArrowDown, FileText } from "react-feather";
 import ShinyText from "./ShinyText";
 import type { HeroProps } from "../types/Types";
+import { scrollTo } from "./Toolbar";
 
 export default function Hero({ data, isScrolled, theme, id }: HeroProps) {
   const [imgLoaded, setImgLoaded] = useState(false);
@@ -115,7 +116,7 @@ export default function Hero({ data, isScrolled, theme, id }: HeroProps) {
 
       <motion.h1
         variants={nameContainer}
-        className="font-hero font-bold mt-6 text-5xl text-text"
+        className="font-hero font-bold mt-6 text-[2.7rem] text-text"
       >
         <ShinyText
           color={theme === "light" ? "#000000" : "#b5b5b5"}
@@ -131,17 +132,33 @@ export default function Hero({ data, isScrolled, theme, id }: HeroProps) {
 
       <motion.p
         variants={description}
-        className="font-display font-normal text-xl p-3"
+        className="font-display font-normal text-xl p-0"
       >
         {data.herodesc}
       </motion.p>
 
-      <div className="h-35" />
+      <div className="h-10" />
+      <a
+      target="_blank"
+      href="https://fvjr156.github.io/my-portfolio/certpreview/2026_resume.pdf"
+      rel="noopener noreferrer"
+        className="text-text flex flex-row gap-3 
+      bg-transparent backdrop-blur-lg p-3 
+      rounded-xl border border-accent/80
+      hover:-translate-y-1
+      hover:drop-shadow-accent/50 hover:drop-shadow-lg
+      transition-all duration-300 ease-out-quint
+      "
+      >
+        <FileText className="size-6 stroke-3" /> View my Resume
+      </a>
+      <div className="h-10" />
 
       <motion.div
         variants={scrollHint}
         animate={isScrolled ? "hidden" : "show"}
         className="text-xs text-text flex flex-col items-center gap-2"
+        onClick={() => scrollTo("projects")}
       >
         <motion.div
           animate={isScrolled ? { y: 0 } : { y: [0, 8, 0] }}
@@ -161,7 +178,7 @@ export default function Hero({ data, isScrolled, theme, id }: HeroProps) {
           <ArrowDown key={theme} className="text-text size-6 stroke-3" />
         </motion.div>
 
-        <p className="mt-3">Scroll Down</p>
+        <p className="mt-3">Scroll To Explore</p>
       </motion.div>
     </motion.div>
   );

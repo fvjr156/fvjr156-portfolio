@@ -71,7 +71,7 @@ function CertificateCard({ cert }: { cert: any }) {
           onError={() => setLoaded(true)}
           onMouseDown={(e) => e.preventDefault()}
           onContextMenu={(e) => e.preventDefault()}
-          className={`w-[90vw] h-auto object-center transition-opacity duration-500 ${loaded ? "opacity-100 dark:opacity-80 dark:hover:opacity-100" : "opacity-0"}`}
+          className={`text-xl text-center w-[90vw] h-auto object-center transition-opacity duration-500 ${loaded ? "opacity-100 dark:opacity-80 dark:hover:opacity-100" : "opacity-0"}`}
         />
       </div>
 

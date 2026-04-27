@@ -37,9 +37,9 @@ function ContactItem({ item, delay}: {item: any, delay: number}) {
   rounded-2xl
   border border-white/10 dark:border-white/10
   bg-card/50
-  transition-all duration-300
+  transition-all duration-300 ease-in-circ
   hover:-translate-y-1.5
-  hover:border-contactem
+  hover:border-accent/80
   hover:bg-card/80
   hover:scale-105
 "

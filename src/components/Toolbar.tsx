@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 import navbar_elements from "../data/navbar_elements.json";
 import BtnThemeToggle from "./BtnThemeToggle";
 import type { ToolbarProps } from "../types/Types";
-import BtnAudioPlayer from "./BtnAudioPlayer";
-import bgm from "../assets/bgm.mp3";
+// import BtnAudioPlayer from "./BtnAudioPlayer";
+// import bgm from "../assets/bgm.mp3";
 
-export default function Toolbar({ visible, theme, setTheme }: ToolbarProps) {
-  const scrollTo = (id: string) => {
+export const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
+export default function Toolbar({ visible, theme, setTheme }: ToolbarProps) {
   return (
     <motion.header
       initial={false}
@@ -57,7 +57,7 @@ export default function Toolbar({ visible, theme, setTheme }: ToolbarProps) {
         ))}
       </nav>
       <div>
-        <BtnAudioPlayer src={bgm} />
+        {/* <BtnAudioPlayer src={bgm} /> */}
         <BtnThemeToggle theme={theme} setTheme={setTheme} />
       </div>
     </motion.header>

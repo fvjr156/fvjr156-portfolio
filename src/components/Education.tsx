@@ -66,12 +66,10 @@ function EducationItem({ data, index }: EducationItemProps) {
 
       <div
         className="
-          rounded-2xl border border-border
-          bg-card/70 backdrop-blur-sm
+          rounded-2xl border border-accent/80 hover:-translate-y-1 hover:drop-shadow-accent/50 hover:drop-shadow-lg transition-all duration-300 ease-in-circ
+          bg-card/60 backdrop-blur-sm
           shadow-sm
           p-5 sm:p-6
-          default-transition
-          hover:shadow-md
         "
       >
         <div className="flex items-start gap-4">

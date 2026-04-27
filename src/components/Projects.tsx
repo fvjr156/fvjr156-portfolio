@@ -37,6 +37,8 @@ export function ProjectsFrameView({ project }: { project: ProjectItem }) {
         w-full h-110 rounded-2xl overflow-hidden
         border border-accent/80
         backdrop-blur-md bg-transparent
+        flex flex-col align-middle justify-center
+        hover:-translate-y-1 hover:drop-shadow-accent/50 hover:drop-shadow-lg transition-all duration-300 ease-in-circ
     "
     >
       <AnimatePresence mode="wait">
