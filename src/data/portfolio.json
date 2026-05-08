@@ -5,6 +5,7 @@
     "intro": "  20 year-old Computer Science undergraduate skilled in full-stack web and mobile app development, with primary expertise in React, Android (Java), and backend design.",
     "projects": [
         {
+            "_id": "mlsignlang",
             "title": "ML-Based Sign Language Translator Application",
             "description": "Translate certain American Sign Language (ASL) gestures to English, English speech to text. Made with Android, MediaPipe, and TFLite.",
             "image": "https://fvjr156.github.io/my-portfolio/demos/isign.webp",
@@ -12,6 +13,7 @@
             "github": "https://www.youtube.com/watch?v=q6gc7SaPXLw"
         },
         {
+            "_id": "augmentedrealitypc",
             "title": "Augmented Reality PC Assembly and Disassembly Application",
             "description": "Computer perts showcase, assembly and disassembly using Augmented Reality (AR). Made with Unity and Vuforia.",
             "image": "https://fvjr156.github.io/my-portfolio/demos/preview_myar.webp",
@@ -21,6 +23,7 @@
     ],
     "personalProjects": [
         {
+            "_id": "brickbreakergame",
             "title": "Brick Breaker Game",
             "description": "Re-creation of a popular 1970s game using the Java Swing GUI toolkit.",
             "image": "https://fvjr156.github.io/my-portfolio/demos/preview_brickbreaker.webp",
@@ -28,7 +31,8 @@
             "github": "https://github.com/fvjr156/fvjr156-brick-breaker-game"
         },
         {
-            "title": "musicapp",
+            "_id": "musicapp",
+            "title": "Music Player Application",
             "description": "A web application for playing local music files. Displays music metadata using music-metadata-browser API. No online uploads required.",
             "image": "https://fvjr156.github.io/my-portfolio/demos/preview_musicplayer.webp",
             "logo": "https://fvjr156.github.io/my-portfolio/logos/musicpl.webp",
@@ -36,6 +40,7 @@
             "github": "https://fvjr156.github.io/awesomepage/musicplayer/"
         },
         {
+            "_id": "allowance",
             "title": "AllowanceCalculator",
             "logo": "https://fvjr156.github.io/my-portfolio/logos/allowance.webp",
             "description": "An Android application for tracking allowances and expenses, with running balance display and PDF export functionalities.",

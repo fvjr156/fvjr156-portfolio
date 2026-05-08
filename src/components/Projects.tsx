@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { ProjectsProps } from "../types/Types";
 import { ExternalLink } from "react-feather";
+import { Link } from "react-router-dom";
 
 export function Projects({
   data,
@@ -24,6 +25,7 @@ export function Projects({
 }
 
 type ProjectItem = {
+  _id: string;
   title: string;
   description: string;
   image: string;
@@ -60,11 +62,13 @@ export function ProjectsFrameView({ project }: { project: ProjectItem }) {
 
             <p className="text-sm text-muted">{project.description}</p>
 
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
+            <Link to={`/my-portfolio/projects?showcase=${project._id}`}>
+              {/* <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer" */}
+              <div
+                className="
             inline-flex items-center gap-2
             w-fit px-4 py-2 rounded-lg
             border border-accent
@@ -72,10 +76,12 @@ export function ProjectsFrameView({ project }: { project: ProjectItem }) {
             bg-transparent backdrop-blur-md
             transition-colors duration-150
           "
-            >
-              View Project
-              <ExternalLink size={16} />
-            </a>
+              >
+                View Project
+                <ExternalLink size={16} />
+                {/* </a> */}
+              </div>
+            </Link>
           </div>
         </motion.div>
       </AnimatePresence>
@@ -116,7 +122,9 @@ export function ProjectsIconBar({
         <button
           key={i}
           onClick={() => onSelect(i)}
-          className={selectedIndex === i ? "ring-2 ring-accent/50 rounded-md" : ""}
+          className={
+            selectedIndex === i ? "ring-2 ring-accent/50 rounded-md" : ""
+          }
         >
           <LogoComponent logo={item.logo} fallback={item.title} />
         </button>
