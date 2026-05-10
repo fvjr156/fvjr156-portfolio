@@ -1,7 +1,7 @@
 import "./styles/App.css";
 import data from "./data/portfolio.json";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import TailwindTest from "./pages/TailwindTest";
+// import TailwindTest from "./pages/TailwindTest";
 import MainPage from "./pages/MainPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import { useEffect, useState } from "react";
@@ -25,7 +25,7 @@ export default function App() {
           path="/my-portfolio/"
           element={<MainPage theme={theme} setTheme={setTheme} />}
         />
-        <Route path="/my-portfolio/tailwind-test" element={<TailwindTest />} />
+        {/* <Route path="/my-portfolio/tailwind-test" element={<TailwindTest />} /> */}
         <Route
           path="/my-portfolio/projects/"
           element={
