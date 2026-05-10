@@ -57,6 +57,21 @@ export type TypeProjects = {
   github: ResourceLink;
 };
 
+export type TypeProjectsPageData = {
+  _id: string;
+  title: string;
+  description: string;
+  image: ImageLink;
+  logo: ImageLink;
+  github: ResourceLink;
+  projectSlideshow: string[];
+  projectDesc: string[];
+  linkables: {
+    app: string;
+    link: string;
+  }[];
+};
+
 export type TypePortfolio = {
   name: string;
   heroavatar: ImageLink;
@@ -85,14 +100,20 @@ export type BtnThemeToggleProps = {
   setTheme: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
+export type ProjectsPageProps = {
+  projects: TypeProjectsPageData[];
+  theme: string | null;
+  setTheme: React.Dispatch<React.SetStateAction<string | null>>;
+};
+
 export type CertificatesProps = {
   data: TypeCertificateItem[];
   id: string;
 };
 
-export type ContactProps = { 
-  data: TypeContactInfo[]; 
-  id: string 
+export type ContactProps = {
+  data: TypeContactInfo[];
+  id: string;
 };
 
 export type EducationItemProps = {

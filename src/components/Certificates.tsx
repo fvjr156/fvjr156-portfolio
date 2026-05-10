@@ -4,10 +4,7 @@ import { motion } from "framer-motion";
 import ImageLoading from "./ImageLoading";
 import type { CertificatesProps, TypeCertificateItem } from "../types/Types";
 
-export default function Certificates({
-  data,
-  id,
-}: CertificatesProps) {
+export default function Certificates({ data, id }: CertificatesProps) {
   const [open, setOpen] = useState<number>(-1);
   const handleOpen = (value: number) => setOpen(open === value ? -1 : value);
 
@@ -18,7 +15,8 @@ export default function Certificates({
       </h1>
 
       <div
-        className={`${open > -1 ? "h-180" : "h-130"} relative overflow-visible accordion-transition`}
+        // className={`${open > -1 ? "h-180" : "h-130"} relative overflow-visible accordion-transition`}
+        className="flex flex-col space-y-4"
       >
         {data.map((x: TypeCertificateItem, index: number) => (
           <Accordion
@@ -26,7 +24,7 @@ export default function Certificates({
             open={open === index}
             aosData={{
               animType: "fade-up",
-              animdelay: (index + 1) * 100,
+              animdelay: index * 50,
               animDuration: 300,
               once: true,
             }}
@@ -37,6 +35,7 @@ export default function Certificates({
             <AccordionHeader onClick={() => handleOpen(index)} styles={{}}>
               {x.name}
             </AccordionHeader>
+            <div className="w-full h-2"></div>
             <AccordionBody>
               <CertificateCard cert={x} />
             </AccordionBody>
@@ -61,7 +60,7 @@ function CertificateCard({ cert }: { cert: any }) {
       whileHover={{ y: -2 }}
       className="flex flex-col md:flex-row md:gap-10 w-full rounded-md overflow-hidden hover:bg-muted/20 transition-colors"
     >
-      <div className="relative w-90 aspect-video overflow-hidden rounded-md">
+      <div className="relative w-full h-full aspect-auto overflow-hidden rounded-md">
         {!loaded && <ImageLoading />}
         <img
           src={cert.certpreviewimg}
@@ -71,7 +70,7 @@ function CertificateCard({ cert }: { cert: any }) {
           onError={() => setLoaded(true)}
           onMouseDown={(e) => e.preventDefault()}
           onContextMenu={(e) => e.preventDefault()}
-          className={`text-xl text-center w-[90vw] h-auto object-center transition-opacity duration-500 ${loaded ? "opacity-100 dark:opacity-80 dark:hover:opacity-100" : "opacity-0"}`}
+          className={`text-xl text-center w-full h-full object-cover transition-opacity duration-500 ${loaded ? "opacity-100 dark:opacity-80 dark:hover:opacity-100" : "opacity-0"}`}
         />
       </div>
 

@@ -11,19 +11,13 @@ import "../styles/App.css";
 import Contact from "../components/Contact";
 import { Projects, ProjectsIconBar } from "../components/Projects";
 import { useInView } from "framer-motion";
-import { Bounce, ToastContainer } from "react-toastify";
+import { Bounce, ToastContainer, type Theme } from "react-toastify";
 import Education from "../components/Education";
-import type { PortfolioSection } from "../types/Types";
+import type { BtnThemeToggleProps, PortfolioSection } from "../types/Types";
 
-export default function MainPage() {
-  type Theme = "light" | "dark";
-
+export default function MainPage({theme, setTheme}: BtnThemeToggleProps) {
   const [floatingUIComponents, setFloatingUIComponents] =
     useState<boolean>(false);
-
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem("websiteThemeMode") as Theme) ?? "dark",
-  );
 
   const projectIconBarShowTriggerRef = useRef<Element>(null);
   const projectIconBarShowTriggerRefInView = useInView(
@@ -47,15 +41,6 @@ export default function MainPage() {
   useEffect(() => {
     document.title = "FVJ Portfolio";
   }, []);
-
-  useEffect(() => {
-    const root = document.documentElement;
-
-    root.classList.toggle("dark", theme === "dark");
-    root.style.backgroundColor = theme === "dark" ? "#090000" : "#f7f7f1";
-
-    localStorage.setItem("websiteThemeMode", theme);
-  }, [theme]);
 
   useEffect(() => {
     const onScroll: () => void = () =>
@@ -147,14 +132,7 @@ export default function MainPage() {
       <BtnBackToTop visible={floatingUIComponents} />
       <Footer data={data.footerinfo} />
       <ProjectsIconBar
-        // data={
-        //   activeSection === "projects"
-        //     ? data.projects
-        //     : activeSection === "personal"
-        //       ? data.personalProjects
-        //       : []
-        // }
-        data={projectsData}
+        data={projectsData.filter(item => item.star)}
         selectedIndex={
           activeSection === "projects" ? projectsIndex : personalProjectsIndex
         }

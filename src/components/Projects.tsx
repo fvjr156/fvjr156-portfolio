@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, type JSX } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { ProjectsProps } from "../types/Types";
-import { ExternalLink } from "react-feather";
+import { ExternalLink, MoreHorizontal } from "react-feather";
 import { Link } from "react-router-dom";
 
 export function Projects({
@@ -36,7 +36,7 @@ export function ProjectsFrameView({ project }: { project: ProjectItem }) {
   return (
     <div
       className="
-        w-full h-110 rounded-2xl overflow-hidden
+        w-full h-full rounded-2xl p-5 overflow-hidden
         border border-accent/80
         backdrop-blur-md bg-transparent
         flex flex-col align-middle justify-center
@@ -115,7 +115,7 @@ export function ProjectsIconBar({
         border border-accent
         flex gap-3 flex-row
         rounded-2xl z-50
-        overflow-scroll 
+        overflow-auto 
       "
     >
       {data.map((item, i) => (
@@ -129,6 +129,9 @@ export function ProjectsIconBar({
           <LogoComponent logo={item.logo} fallback={item.title} />
         </button>
       ))}
+      <button>
+        <LogoComponent logo={<MoreHorizontal stroke="currentColor" className="text-text" />} fallback={"..."} />
+      </button>
     </motion.div>
   );
 }
@@ -137,7 +140,7 @@ export function LogoComponent({
   logo,
   fallback,
 }: {
-  logo: string;
+  logo: string | JSX.Element;
   fallback: string;
 }) {
   const [imgError, setImgError] = useState(false);
@@ -148,7 +151,7 @@ export function LogoComponent({
       className={`
       w-12 h-12 
       flex items-center justify-center 
-      bg-linear-to-br from-slate-400 to-slate-600 
+      ${typeof logo === "string" ? "bg-linear-to-br from-slate-400 to-slate-600" : "bg-background/0"} 
       text-white rounded-md shadow-lg 
       overflow-hidden
       hover:scale-105 hover:-translate-y-1 transition-transform duration-150 hover:border-accent hover:border
@@ -158,7 +161,7 @@ export function LogoComponent({
         <span className="font-bold font-hero text-lg leading-none">
           {firstLetter}
         </span>
-      ) : (
+      ) : typeof logo === "string" ? (
         <img
           src={logo}
           alt="Logo"
@@ -167,6 +170,8 @@ export function LogoComponent({
           draggable={false}
           onContextMenu={(e) => e.preventDefault()}
         />
+      ) : (
+        <Link to={`/my-portfolio/projects`}>{logo}</Link>
       )}
     </div>
   );

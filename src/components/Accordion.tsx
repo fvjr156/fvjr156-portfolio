@@ -33,17 +33,24 @@ export const Accordion = ({
   );
 };
 
-export const AccordionHeader = ({ children, onClick, styles }: {children: any, onClick: any, styles: any}) => {
+export const AccordionHeader = ({
+  children,
+  onClick,
+  styles,
+}: {
+  children: any;
+  onClick: any;
+  styles: any;
+}) => {
   const { open } = useContext(AccordionContext);
 
   return (
     <button
       onClick={onClick}
       style={styles}
-      className="flex w-full items-center justify-between
+      className={` flex w-full items-center justify-between
                  px-5 h-14
-                 text-left font-medium
-"
+                 text-left font-medium transition-colors duration-300 ${open ? "bg-accent/5" : "hover:bg-accent/5"}`}
     >
       <span className="text-sm md:text-base">{children}</span>
 
@@ -66,15 +73,27 @@ export const AccordionBody = ({ children }: any) => {
       {open && (
         <motion.div
           initial={{ height: 0, opacity: 0 }}
-          animate={{ height: "auto", opacity: 1 }}
-          exit={{ height: 0, opacity: 0 }}
-          transition={{
-            height: { duration: 0.35 },
-            opacity: { duration: 0.2 },
+          animate={{ 
+            height: "auto", 
+            opacity: 1,
+            transition: {
+              height: { duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] },
+              opacity: { duration: 0.25, delay: 0.1 }
+            }
+          }}
+          exit={{ 
+            height: 0, 
+            opacity: 0,
+            transition: {
+              height: { duration: 0.3 },
+              opacity: { duration: 0.2 }
+            }
           }}
           className="overflow-hidden"
         >
-          <div className="px-5 pb-5 text-sm">{children}</div>
+          <div className="px-5 pb-6 text-sm border-t border-accent/10 pt-4 mt-2">
+            {children}
+          </div>
         </motion.div>
       )}
     </AnimatePresence>

@@ -5,31 +5,133 @@
     "intro": "  20 year-old Computer Science undergraduate skilled in full-stack web and mobile app development, with primary expertise in React, Android (Java), and backend design.",
     "projects": [
         {
+            "star": true,
             "_id": "mlsignlang",
             "title": "ML-Based Sign Language Translator Application",
             "description": "Translate certain American Sign Language (ASL) gestures to English, English speech to text. Made with Android, MediaPipe, and TFLite.",
             "image": "https://fvjr156.github.io/my-portfolio/demos/isign.webp",
             "logo": "https://fvjr156.github.io/my-portfolio/logos/isign.webp",
-            "github": "https://www.youtube.com/watch?v=q6gc7SaPXLw"
+            "github": "https://www.youtube.com/watch?v=q6gc7SaPXLw",
+            "projectSlideshow": [],
+            "projectDesc": [
+                "Engineered an Android application that translates American Sign Language gestures into text and speech, leveraging a custom TFLite model for high-speed, gesture inference for edge devices.",
+                "Optimized on-device gesture recognition using a MediaPipe Hands pipeline, ensuring low-latency camera-to-data conversion, and a smooth, responsive user experience.",
+                "Integrated text-to-speech and accessibility features, allowing for seamless multi-modal communication between sign language users and non-signers.",
+                "Designed an intuitive, high-performance user interface designed for camera-and-model-intensive workflows, ensuring fast, seamless, and responsive functionality even on limited mobile hardware.",
+                "Managed the end-to-end ML lifecycle, from optimizing the TFLite for mobile deployment, to handling real-time coordinate mapping of hand landmarks for improved gesture accuracy."
+            ],
+            "linkables": [
+                {
+                    "app": "youtube",
+                    "link": "https://www.youtube.com/watch?v=q6gc7SaPXLw"
+                }
+            ]
         },
         {
+            "star": true,
             "_id": "augmentedrealitypc",
             "title": "Augmented Reality PC Assembly and Disassembly Application",
             "description": "Computer perts showcase, assembly and disassembly using Augmented Reality (AR). Made with Unity and Vuforia.",
             "image": "https://fvjr156.github.io/my-portfolio/demos/preview_myar.webp",
             "logo": "https://fvjr156.github.io/my-portfolio/logos/myar.webp",
-            "github": "https://www.youtube.com/watch?v=T1iV1YqTDN4"
+            "github": "https://www.youtube.com/watch?v=T1iV1YqTDN4",
+            "projectSlideshow": [],
+            "projectDesc": [
+                "Developed an immersive AR Android application designed to simulate complex PC assembly and disassembly procedures through interactive 3D visualization.",
+                "Built an AR environment using Unity, and implemented high- precision marker recognition using Vuforia, to trigger 3D model spawning and real-time rendering.",
+                "Engineered an interactive component system that allows users to observe, scale and rotate PC parts (CPU, GPU, RAM, etc.), simulating realistic spatial placement and assembly sequences.",
+                "Optimized 3D asset performance for mobile hardware, ensuring smooth rendering and responsive model tracking during component interactions."
+            ],
+            "linkables": [
+                {
+                    "app": "youtube",
+                    "link": "https://www.youtube.com/watch?v=T1iV1YqTDN4"
+                }
+            ]
+        },
+        {
+            "star": false,
+            "_id": "arcifs",
+            "title": "ArciFS — Automated Response Collection and Monitoring System",
+            "description": "Automated, richer, more actionable survey responses and insights data for STI College Marikina's SHS Expo 2024 — Cucina de Marquina.",
+            "image": "",
+            "logo": "",
+            "github": "",
+            "projectSlideshow": [],
+            "projectDesc": [
+                "Built a full-stack web application that automates data ingestion from Microsoft Forms via a Power Automate pipeline, streamlining exports of raw form responses data into a centralized MySQL database.",
+                "Developed a high-performance dashboard using React and Material UI, with real time data visualization with Chart.js for immediate and easy monitoring of incoming data.",
+                "Built an Express.js backend to handle serialized JSON data, implementing RESTful API endpoints for efficient data insertions and queries.",
+                "Accelerated reporting workflows by designing granular analytics modules (which are categorized by form, individual response, and question), reducing manual data synthesis time and providing deeper insights than native Microsoft platform tools"
+            ],
+            "linkables": [
+                {
+                    "app": "github",
+                    "link": ""
+                }
+            ]
+        },
+        {
+            "star": false,
+            "_id": "vremia",
+            "title": "Vremia — Digital Time Management Application",
+            "description": "A digital, fully-offline time management aid designed to create and trigger alarms and reminders on user-defined time and date.",
+            "image": "",
+            "logo": "",
+            "github": "",
+            "projectSlideshow": [],
+            "projectDesc": [
+                "Developed a localized time-management Android application focused on scheduling and task planning with fully-offline functionalities",
+                "Built a persistent data layer using SQLite, implementing local database management to ensure zero-latency offline data access.",
+                "Designed a responsive UI following Material Design and HCI principles, optimizing touch targets, icon density, and adaptive layouts for a consistent user experience across different devices.",
+                "Leveraged the Android Notification Service to deliver priority-level alerts, ensuring critical reminders are successfully triggered and visible to the user in real-time.",
+                "Integrated Material Component Library for intuitive, consistent styling across form components and dialogs such as date and time pickers, to minimize user errors and streamline the scheduling process."
+            ],
+            "linkables": [
+                {
+                    "app": "github",
+                    "link": ""
+                }
+            ]
         }
     ],
     "personalProjects": [
         {
+            "star": true,
             "_id": "brickbreakergame",
             "title": "Brick Breaker Game",
             "description": "Re-creation of a popular 1970s game using the Java Swing GUI toolkit.",
             "image": "https://fvjr156.github.io/my-portfolio/demos/preview_brickbreaker.webp",
             "logo": "https://fvjr156.github.io/my-portfolio/logos/brickgam.webp",
-            "github": "https://github.com/fvjr156/fvjr156-brick-breaker-game"
+            "github": "https://github.com/fvjr156/fvjr156-brick-breaker-game",
+            "projectSlideshow": [],
+            "projectDesc": [],
+            "linkables": [
+                {
+                    "app": "github",
+                    "link": "https://github.com/fvjr156/fvjr156-brick-breaker-game"
+                }
+            ]
         },
+        {
+            "star": true,
+            "_id": "allowance",
+            "title": "Allowance Calculator",
+            "logo": "https://fvjr156.github.io/my-portfolio/logos/allowance.webp",
+            "description": "An Android application for tracking allowances and expenses, with running balance display and PDF export functionalities.",
+            "image": "https://fvjr156.github.io/my-portfolio/demos/preview_allowancecalc.webp",
+            "github": "https://github.com/fvjr156/AllowanceCalculator",
+            "projectSlideshow": [],
+            "projectDesc": [],
+            "linkables": [
+                {
+                    "app": "github",
+                    "link": "https://github.com/fvjr156/AllowanceCalculator"
+                }
+            ]
+        }
+    ],
+    "optionalProjects": [
         {
             "_id": "musicapp",
             "title": "Music Player Application",
@@ -37,15 +139,15 @@
             "image": "https://fvjr156.github.io/my-portfolio/demos/preview_musicplayer.webp",
             "logo": "https://fvjr156.github.io/my-portfolio/logos/musicpl.webp",
             "attentiongif": "demos/musicplayerdemo.gif",
-            "github": "https://fvjr156.github.io/awesomepage/musicplayer/"
-        },
-        {
-            "_id": "allowance",
-            "title": "AllowanceCalculator",
-            "logo": "https://fvjr156.github.io/my-portfolio/logos/allowance.webp",
-            "description": "An Android application for tracking allowances and expenses, with running balance display and PDF export functionalities.",
-            "image": "https://fvjr156.github.io/my-portfolio/demos/preview_allowancecalc.webp",
-            "github": "https://github.com/fvjr156/AllowanceCalculator"
+            "github": "https://fvjr156.github.io/awesomepage/musicplayer/",
+            "projectSlideshow": [],
+            "projectDesc": [],
+            "linkables": [
+                {
+                    "app": "github",
+                    "link": "https://fvjr156.github.io/awesomepage/musicplayer/"
+                }
+            ]
         }
     ],
     "aboutInfo": {
@@ -84,7 +186,11 @@
                 "institution": "Coursera",
                 "date": "4 April 2026",
                 "certlink": "https://coursera.org/share/4d166512610af4021eee04ae9c640856",
-                "tags": ["Python", "Programming", "Fundamentals"]
+                "tags": [
+                    "Python",
+                    "Programming",
+                    "Fundamentals"
+                ]
             },
             {
                 "name": "Foundations of Agile Project Management",
@@ -93,7 +199,10 @@
                 "institution": "Coursera",
                 "date": "4 March 2026",
                 "certlink": "https://coursera.org/share/2592eec1c05cf07d832f044d8ff2de6f",
-                "tags": ["Agile", "Project Management"]
+                "tags": [
+                    "Agile",
+                    "Project Management"
+                ]
             },
             {
                 "name": "Java (Basic)",
@@ -102,7 +211,11 @@
                 "institution": "HackerRank",
                 "date": "24 November 2024",
                 "certlink": "https://www.hackerrank.com/certificates/19689f072134",
-                "tags": ["Java", "OOP", "Fundamentals"]
+                "tags": [
+                    "Java",
+                    "OOP",
+                    "Fundamentals"
+                ]
             },
             {
                 "name": "React (Basic)",
@@ -111,7 +224,12 @@
                 "institution": "HackerRank",
                 "date": "24 November 2024",
                 "certlink": "https://www.hackerrank.com/certificates/6e931408ac0a",
-                "tags": ["React", "Frontend", "JavaScript", "Fundamentals"]
+                "tags": [
+                    "React",
+                    "Frontend",
+                    "JavaScript",
+                    "Fundamentals"
+                ]
             },
             {
                 "name": "Start Writing Prompts like a Pro",
@@ -120,7 +238,11 @@
                 "institution": "Coursera",
                 "date": "4 March 2026",
                 "certlink": "https://coursera.org/share/4563b5875d7956ac8f505aaefe6b6f6f",
-                "tags": ["LLMs", "Prompt Engineering", "Google"]
+                "tags": [
+                    "LLMs",
+                    "Prompt Engineering",
+                    "Google"
+                ]
             },
             {
                 "name": "CodeFest 2025 Local Level - 1st Runner Up",
@@ -129,7 +251,11 @@
                 "institution": "STI College Marikina",
                 "date": "28 February 2025",
                 "certlink": "https://fvjr156.github.io/my-portfolio/certpreview/codefest.webp",
-                "tags": ["Android", "Java", "Mobile App Development"],
+                "tags": [
+                    "Android",
+                    "Java",
+                    "Mobile App Development"
+                ],
                 "contain": true
             },
             {
@@ -139,7 +265,12 @@
                 "institution": "STI College Marikina",
                 "date": "28 November 2024",
                 "certlink": "https://fvjr156.github.io/my-portfolio/certpreview/codingleague.webp",
-                "tags": ["Java", "Problem Solving", "Data Structures", "Algorithms"],
+                "tags": [
+                    "Java",
+                    "Problem Solving",
+                    "Data Structures",
+                    "Algorithms"
+                ],
                 "contain": true
             }
         ]
