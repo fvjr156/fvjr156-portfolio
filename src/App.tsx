@@ -1,6 +1,6 @@
 import "./styles/App.css";
 import data from "./data/portfolio.json";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import TailwindTest from "./pages/TailwindTest";
 import MainPage from "./pages/MainPage";
 import ProjectsPage from "./pages/ProjectsPage";
@@ -19,7 +19,7 @@ export default function App() {
     localStorage.setItem("websiteThemeMode", theme!);
   }, [theme]);
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route
           path="/my-portfolio/"
@@ -37,6 +37,6 @@ export default function App() {
           }
         />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
